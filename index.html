@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Memory Matching Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🧠 Memory Matching Game</h1>
+
+  <div class="score-board">
+    Moves: <span id="moves">0</span> |
+    Time: <span id="timer">0</span>s |
+    <span id="score-label">Score: <span id="score">0</span></span> |
+    <span id="level-label">Level: <span id="level">1</span></span> |
+    Theme:
+    <select id="theme-select">
+      <option value="fruits">🍎 Fruits</option>
+      <option value="animals">🐶 Animals</option>
+      <option value="faces">😀 Faces</option>
+    </select>
+  </div>
+
+  <button id="restart">🔄 Restart Game</button>
+
+  <div class="game-board" id="game-board"></div>
+
+  <div id="winModal" class="modal">
+    <div class="modal-content">
+      <h2>🎉 You Won the Match!</h2>
+      <p>Moves: <span id="finalMoves"></span></p>
+      <p>Time: <span id="finalTime"></span> seconds</p>
+      <button onclick="restartGame()">Play Again</button>
+    </div>
+  </div>
+
+  <div id="levelUpModal" class="modal">
+    <div class="modal-content">
+      <h2>🚀 Level Up!</h2>
+      <p>Welcome to Level <span id="nextLevel"></span>!</p>
+      <button onclick="nextLevel()">Continue</button>
+    </div>
+  </div>
+
+  
+  <audio id="flipSound" src="flip.mp3"></audio>
+  <audio id="matchSound" src="match.mp3"></audio>
+  <audio id="mismatchSound" src="mismatch.mp3"></audio>
+  <audio id="gameOverSound" src="gameOver.mp3"></audio>
+  <audio id="winSound" src="win.mp3"></audio> <!-- Added winning sound -->
+
+  
+  <div id="confetti"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
